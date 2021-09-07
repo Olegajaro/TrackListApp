@@ -15,6 +15,8 @@ class TrackListViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = 80
+        // добавление кнопки edit в navigationController
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     // MARK: - Table view data source
@@ -42,6 +44,23 @@ class TrackListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let track = trackList[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: track)
+    }
+    
+    // метод для того, чтобы перестать отображать слева при нажатии на кнопку edit красные кружки с меню удаления элемента
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+    
+    // метод для того, чтобы перестать отображать отступ слева при нажатии на кнопку edit
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+    
+    // метод для того, чтобы при нажатии на кнопку edit на каждой секции отобразить бургер для перетаскивания элемента
+    // внутри реализуется логика, для того, чтобы перетаскиваемый элемент менял свой индекс в исходном массиве
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentTrack = trackList.remove(at: sourceIndexPath.row)
+        trackList.insert(currentTrack, at: destinationIndexPath.row)
     }
     
     // MARK: - Navigation
