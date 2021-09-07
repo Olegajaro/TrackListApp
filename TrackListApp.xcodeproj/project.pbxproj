@@ -15,6 +15,7 @@
 		10431C8926E7BDE4001DA014 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10431C8826E7BDE4001DA014 /* .gitignore */; };
 		10431C8B26E7CA7D001DA014 /* TrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431C8A26E7CA7D001DA014 /* TrackListViewController.swift */; };
 		10431C8D26E7CC43001DA014 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431C8C26E7CC43001DA014 /* Track.swift */; };
+		10431C8F26E7DC2B001DA014 /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10431C8E26E7DC2B001DA014 /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		10431C8826E7BDE4001DA014 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10431C8A26E7CA7D001DA014 /* TrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
 		10431C8C26E7CC43001DA014 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		10431C8E26E7DC2B001DA014 /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				10431C8226E7BBCE001DA014 /* Info.plist */,
 				10431C8A26E7CA7D001DA014 /* TrackListViewController.swift */,
 				10431C8C26E7CC43001DA014 /* Track.swift */,
+				10431C8E26E7DC2B001DA014 /* TrackDetailsViewController.swift */,
 			);
 			path = TrackListApp;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				10431C7526E7BBCE001DA014 /* AppDelegate.swift in Sources */,
 				10431C7726E7BBCE001DA014 /* SceneDelegate.swift in Sources */,
+				10431C8F26E7DC2B001DA014 /* TrackDetailsViewController.swift in Sources */,
 				10431C8B26E7CA7D001DA014 /* TrackListViewController.swift in Sources */,
 				10431C8D26E7CC43001DA014 /* Track.swift in Sources */,
 			);

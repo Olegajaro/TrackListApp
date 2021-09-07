@@ -37,8 +37,20 @@ class TrackListViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    // переход через вьюконтроллер
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let track = trackList[indexPath.row]
+        performSegue(withIdentifier: "showDetails", sender: track)
+    }
+    
     // MARK: - Navigation
     
+    // то что в комменте используется для перехода по ячейке
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsVC = segue.destination as? TrackDetailsViewController else { return }
+//        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//        let track = trackList[indexPath.row]
+        detailsVC.track = sender as? Track
     }
 }
