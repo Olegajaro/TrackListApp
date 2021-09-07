@@ -7,16 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController {
     // количество строк в секции
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         10
     }
     // метод отвечает за настройку контента в ячейке
@@ -24,7 +24,7 @@ extension ViewController: UITableViewDataSource {
     // dequeueReusableCell создание объекта внеочередной переиспользуемой ячейки
     // в параметре indexPath содержится индекс вновь создаваемой ячейки
     // в методе реализуем отображения текста в ячейке (то как это делается, уже не используется)
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = "Cell index \(indexPath.row)"
